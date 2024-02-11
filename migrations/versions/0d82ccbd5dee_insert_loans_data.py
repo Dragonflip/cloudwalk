@@ -10,10 +10,8 @@ import csv
 import os
 
 from alembic import op
-import sqlalchemy as sa
-from cloudwalk.settings import Settings
-from cloudwalk.db.insert import insert_csv_to_postgres
-
+from sqlalchemy import create_engine
+from  cloudwalk.settings import Settings
 
 # revision identifiers, used by Alembic.
 revision: str = '0d82ccbd5dee'
@@ -23,20 +21,18 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
+    settings = Settings()    #type: ignore
     dirname = os.getcwd()
     filename = os.path.join(dirname, 'migrations/data/loans.csv')
     with open(filename, 'r') as f:
         reader = csv.reader(f)
         header = next(reader)
-    columns = ','.join(header)
-    with open(filename, 'r') as f:
-        # Construct the COPY command
-        copy_sql = f"""
-        COPY loans({columns}) FROM stdin WITH CSV HEADER
-        {f.read()}
-        """
-        # Execute the COPY command
-        op.execute(copy_sql)
+        columns = ','.join(header)
+        conn = create_engine(settings.DATABASE_URL).raw_connection()
+        cursor = conn.cursor()
+        cmd = f'COPY loans({columns}) FROM STDIN WITH (FORMAT CSV, HEADER FALSE)'
+        cursor.copy_expert(cmd, f)
+        conn.commit()
 
 def downgrade() -> None:
     pass

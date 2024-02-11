@@ -14,13 +14,15 @@ services:
       - postgres_data:/var/lib/postgresql/data
     network_mode: host
 
-  adminer:
-    image: adminer
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
     restart: always
     ports:
-      - 8080:8080
-    depends_on:
-      - db
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
     network_mode: host
 
 volumes:

@@ -9,7 +9,7 @@ Base = declarative_base()
 class Client(Base):
     __tablename__ = 'clients'
 
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, primary_key=True, autoincrement=True)
     created_at = Column(DateTime)
     status = Column(String)
     batch = Column(Integer)

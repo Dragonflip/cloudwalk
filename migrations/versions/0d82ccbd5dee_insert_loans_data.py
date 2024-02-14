@@ -30,6 +30,7 @@ def upgrade() -> None:
         cmd = f'COPY loans({columns}) FROM STDIN WITH (FORMAT CSV, HEADER FALSE)'
         cursor.copy_expert(cmd, f)
         conn.commit()
+    op.execute("SELECT setval('loans_loan_id_seq', (SELECT MAX(loan_id) FROM loans));")
 
 def downgrade() -> None:
     pass

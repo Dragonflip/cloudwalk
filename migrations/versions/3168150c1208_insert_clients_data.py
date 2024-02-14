@@ -10,6 +10,7 @@ import os
 import csv
 
 from alembic import op
+from sqlalchemy import text
 
 # revision identifiers, used by Alembic.
 revision: str = '3168150c1208'
@@ -29,6 +30,7 @@ def upgrade() -> None:
         cmd = f'COPY clients({columns}) FROM STDIN WITH (FORMAT CSV, HEADER FALSE)'
         cursor.copy_expert(cmd, f)
         conn.commit()
+    op.execute("SELECT setval('clients_user_id_seq', (SELECT MAX(user_id) FROM clients));")
 
 def downgrade() -> None:
     pass

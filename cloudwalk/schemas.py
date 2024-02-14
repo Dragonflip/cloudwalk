@@ -18,7 +18,7 @@ class DeniedSchema(Enum):
 
 class StatusSchema(Enum):
     DENIED = 'denied'
-    APROVED = 'aproved'
+    APROVED = 'approved'
 
 
 class UserSchema(BaseModel):

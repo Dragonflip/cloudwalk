@@ -9,8 +9,7 @@ from cloudwalk.db.engine import get_session
 
 router = APIRouter(prefix = '/users')
 
-
-@router.post('/', response_model=UserPublic)
+@router.post('/', status_code=201, response_model=UserPublic)
 def create_user(user: UserSchema, session: Session = Depends(get_session)):
     db_user = Client(
         status = user.status.value,
@@ -31,7 +30,7 @@ def update_user(user_id: int, user: UserSchema, session: Session = Depends(get_s
     db_user = session.scalar(select(Client).where(Client.user_id == user_id))
     if not db_user:
         raise HTTPException(status_code=404, detail='User not found')
-
+    
     db_user.status = user.status.value
     db_user.batch = user.batch
     db_user.credit_limit = user.credit_limit

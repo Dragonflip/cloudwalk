@@ -3,7 +3,6 @@
 Revision ID: 3168150c1208
 Revises: 397c930c2bfd
 Create Date: 2024-02-10 14:06:56.907964
-
 """
 from typing import Sequence, Union
 import os
@@ -18,6 +17,7 @@ down_revision: Union[str, None] = '397c930c2bfd'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 
+
 def upgrade() -> None:
     dirname = os.getcwd()
     filename = os.path.join(dirname, 'migrations/data/clients.csv')
@@ -30,7 +30,10 @@ def upgrade() -> None:
         cmd = f'COPY clients({columns}) FROM STDIN WITH (FORMAT CSV, HEADER FALSE)'
         cursor.copy_expert(cmd, f)
         conn.commit()
-    op.execute("SELECT setval('clients_user_id_seq', (SELECT MAX(user_id) FROM clients));")
+    op.execute(
+        "SELECT setval('clients_user_id_seq', (SELECT MAX(user_id) FROM clients));"
+    )
+
 
 def downgrade() -> None:
     pass

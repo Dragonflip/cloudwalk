@@ -28,10 +28,7 @@ def session():
 @pytest.fixture
 def approved_client(session):
     client = Client(
-        status="approved",
-        batch=1,
-        credit_limit=20000,
-        interest_rate=20
+        status='approved', batch=1, credit_limit=20000, interest_rate=20
     )
     session.add(client)
     session.commit()
@@ -49,4 +46,3 @@ def test_client(session):
         yield client
 
     app.dependency_overrides.clear()
-

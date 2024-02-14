@@ -3,7 +3,6 @@
 Revision ID: 0d82ccbd5dee
 Revises: 3168150c1208
 Create Date: 2024-02-10 14:07:04.679731
-
 """
 from typing import Sequence, Union
 import csv
@@ -27,10 +26,15 @@ def upgrade() -> None:
         columns = ','.join(header)
         conn = op.get_bind().engine.raw_connection()
         cursor = conn.cursor()
-        cmd = f'COPY loans({columns}) FROM STDIN WITH (FORMAT CSV, HEADER FALSE)'
+        cmd = (
+            f'COPY loans({columns}) FROM STDIN WITH (FORMAT CSV, HEADER FALSE)'
+        )
         cursor.copy_expert(cmd, f)
         conn.commit()
-    op.execute("SELECT setval('loans_loan_id_seq', (SELECT MAX(loan_id) FROM loans));")
+    op.execute(
+        "SELECT setval('loans_loan_id_seq', (SELECT MAX(loan_id) FROM loans));"
+    )
+
 
 def downgrade() -> None:
     pass

@@ -18,7 +18,7 @@ class Client(Base):
     denied_reason = Column(String)
     denied_at = Column(DateTime)
 
-    loans = relationship("Loan", back_populates="client")
+    loans = relationship('Loan', back_populates='client')
 
 
 class Loan(Base):
@@ -35,4 +35,4 @@ class Loan(Base):
     due_amount = Column(Float)
     amount_paid = Column(Float)
 
-    client = relationship("Client", back_populates="loans")
+    client = relationship('Client', back_populates='loans')

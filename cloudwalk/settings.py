@@ -10,3 +10,6 @@ class Settings(BaseSettings):
     POSTGRES_DB: str
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str
+    SMTP_URL: str
+    EMAIL_SENDER: str
+    EMAIL_PASSWORD: str

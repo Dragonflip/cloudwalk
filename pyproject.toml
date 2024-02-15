@@ -8,12 +8,14 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 sqlalchemy = "^2.0.25"
-pydantic = "^2.6.1"
-pydantic-settings = "^2.1.0"
 psycopg2-binary = "^2.9.9"
 fastapi = "^0.109.2"
 uvicorn = "^0.27.1"
 httpx = "^0.26.0"
+rocketry = {git = "https://github.com/tekumara/rocketry", rev = "pydantic-v2"}
+pydantic-settings = "^2.1.0"
+pydantic = "^2.6.1"
+aiosmtplib = "^3.0.1"
 
 
 [tool.poetry.group.dev.dependencies]

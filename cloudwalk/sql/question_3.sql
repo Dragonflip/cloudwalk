@@ -3,5 +3,4 @@ SELECT		interest_rate,
 FROM	loans as l
 	INNER JOIN 	clients as c
 		ON c.user_id = l.user_id
-GROUP BY 
-    interest_rate;
+GROUP BY    interest_rate;

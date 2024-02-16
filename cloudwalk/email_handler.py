@@ -68,7 +68,7 @@ class SummarizingOperationMail:
     def get_data(self):
         session = get_session()
         sql = text(
-        """
+            """
         WITH default_rate_year as ( 
         SELECT  extract(month from created_at),
                 extract(year from created_at),

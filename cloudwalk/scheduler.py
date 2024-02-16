@@ -21,7 +21,7 @@ async def on_going_loans_email():
     await task
 
 
-@app.task(weekly.at('00:00'))
+@app.task(weekly)
 async def summarizing_operation_email():
     print('enviando emails...')
     smtp = SmtpHandler(Settings())    # type: ignore

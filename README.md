@@ -4,53 +4,6 @@
 
 ### Migrations
 
-
-```python
-!cat docker-compose.yml
-```
-
-    version: '3.8'
-    
-    services:
-      db:
-        image: postgres:latest
-        restart: always
-        environment:
-          POSTGRES_DB: ${POSTGRES_DB}
-          POSTGRES_USER: ${POSTGRES_USER}
-          POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-        ports:
-          - "5432:5432"
-        volumes:
-          - postgres_data:/var/lib/postgresql/data
-        network_mode: host
-    
-      pgadmin:
-        image: dpage/pgadmin4
-        container_name: pgadmin4_container
-        restart: always
-        ports:
-          - "8889:80"
-        environment:
-          PGADMIN_DEFAULT_EMAIL: admin@admin.com
-          PGADMIN_DEFAULT_PASSWORD: admin
-        network_mode: host
-          
-      app:
-        image: app
-        build:
-          context: .
-          dockerfile: Dockerfile
-        ports:
-          - "8000:8000"
-        depends_on:
-          - db
-        network_mode: host
-    
-    volumes:
-      postgres_data:
-
-
 #### Alembic
 
 Alembic é uma ferramenta de migração de banco de dados para o SQLAlchemy, um toolkit de mapeamento relacional de objetos (ORM) em Python. Ele simplifica o processo de gerenciamento de mudanças de esquema em bancos de dados relacionais.

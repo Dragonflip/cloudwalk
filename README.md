@@ -252,29 +252,9 @@ Alembic é uma ferramenta de migração de banco de dados para o SQLAlchemy, um 
 ```
 
     [1A[1B[0G[?25l[+] Running 3/0
-     [33m⠋[0m Volume "cloudwalk_postgres_data"                                   Created[34m0.1s [0m
-     [33m⠋[0m Container cloudwalk-db-1                                           Starting[34m0.1s [0m
-     [33m[1m![0m db Published ports are discarded when using host network mode      [33m[1m[0m     [34m0.0s [0m
-     [33m⠋[0m Container cloudwalk-app-1                                          Created[34m0.1s [0m
-     [33m⠋[0m Container pgadmin4_container                                       Created[34m0.1s [0m
-     [33m[1m![0m app Published ports are discarded when using host network mode     [33m[1m[0m     [34m0.0s [0m
-     [33m[1m![0m pgadmin Published ports are discarded when using host network mode [33m[1m[0m     [34m0.0s [0m
-    [?25h[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Running 4/7
-     [33m⠙[0m Volume "cloudwalk_postgres_data"                                   Created[34m0.2s [0m
-     [32m✔[0m Container cloudwalk-db-1                                           [32mStarted[0m[34m0.2s [0m
-     [33m[1m![0m db Published ports are discarded when using host network mode      [33m[1m[0m     [34m0.0s [0m
-     [33m⠙[0m Container cloudwalk-app-1                                          Starting[34m0.2s [0m
-     [33m⠙[0m Container pgadmin4_container                                       Starting[34m0.2s [0m
-     [33m[1m![0m app Published ports are discarded when using host network mode     [33m[1m[0m     [34m0.0s [0m
-     [33m[1m![0m pgadmin Published ports are discarded when using host network mode [33m[1m[0m     [34m0.0s [0m
-    [?25h[1A[1A[1A[1A[1A[1A[1A[1A[0G[?25l[+] Running 6/7
-     [33m⠹[0m Volume "cloudwalk_postgres_data"                                   Created[34m0.3s [0m
-     [32m✔[0m Container cloudwalk-db-1                                           [32mStarted[0m[34m0.2s [0m
-     [33m[1m![0m db Published ports are discarded when using host network mode      [33m[1m[0m     [34m0.0s [0m
-     [32m✔[0m Container cloudwalk-app-1                                          [32mStarted[0m[34m0.3s [0m
-     [32m✔[0m Container pgadmin4_container                                       [32mStarted[0m[34m0.2s [0m
-     [33m[1m![0m app Published ports are discarded when using host network mode     [33m[1m[0m     [34m0.0s [0m
-     [33m[1m![0m pgadmin Published ports are discarded when using host network mode [33m[1m[0m     [34m0.0s [0m
+     [32m✔[0m Container cloudwalk-db-1      [32mRunning[0m                                   [34m0.0s [0m
+     [32m✔[0m Container cloudwalk-app-1     [32mRunning[0m                                   [34m0.0s [0m
+     [32m✔[0m Container pgadmin4_container  [32mRunning[0m                                   [34m0.0s [0m
     [?25h
 
 #### db

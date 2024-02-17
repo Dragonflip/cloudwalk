@@ -251,11 +251,10 @@ Alembic é uma ferramenta de migração de banco de dados para o SQLAlchemy, um 
 !docker compose up -d
 ```
 
-    [1A[1B[0G[?25l[+] Running 3/0
-     [32m✔[0m Container cloudwalk-db-1      [32mRunning[0m                                   [34m0.0s [0m
-     [32m✔[0m Container cloudwalk-app-1     [32mRunning[0m                                   [34m0.0s [0m
-     [32m✔[0m Container pgadmin4_container  [32mRunning[0m                                   [34m0.0s [0m
-    [?25h
+    [+] Running 3/0
+     ✔ Container cloudwalk-db-1      Running                                   0.0s 
+     ✔ Container cloudwalk-app-1     Running                                   0.0s 
+     ✔ Container pgadmin4_container  Running                                   0.0s 
 
 #### db
 

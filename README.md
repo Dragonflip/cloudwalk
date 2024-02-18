@@ -6,30 +6,30 @@
 
 #### Alembic
 
-Alembic é uma ferramenta de migração de banco de dados para o SQLAlchemy, um toolkit de mapeamento relacional de objetos (ORM) em Python. Ele simplifica o processo de gerenciamento de mudanças de esquema em bancos de dados relacionais.
+Alembic is a lightweight database migration tool for SQLAlchemy, a Python SQL toolkit and Object-Relational Mapper (ORM). It provides a convenient way to manage changes to your database schema over time.
+
+##### Key Features:
+
+- **Schema Version Control:** Alembic enables tracking schema changes in databases through versioned revisions. Each revision represents a change in the database schema.
+
+- **Automatic Migration Generation:** Alembic can automatically generate migration scripts based on the differences between SQLAlchemy models and the current state of the database.
+
+- **Custom Migrations:** Developers can create custom migrations using Python, providing flexibility to handle complex migration cases.
+
+- **Multiple Database Support:** Alembic is compatible with a variety of database management systems (DBMS) supported by SQLAlchemy, such as PostgreSQL, MySQL, SQLite, among others.
+
+##### Basic Usage:
+
+1. **Initial Setup:** Initialize the Alembic environment and configure the `alembic.ini` file with the database connection information.
+
+2. **Creation of Revisions:** Use the `alembic revision -m "message"` command to create a new revision. This will create a new Python file in the revisions folder.
+
+3. **Database Update:** Apply pending revisions to the database using the `alembic upgrade head` command.
+
+4. **Undo Changes:** If needed, it's possible to revert applied changes using the `alembic downgrade -1` command, where `-1` represents the number of revisions to be reverted.
 
 
-##### Principais recursos:
-
-- **Controle de versão do esquema:** Alembic permite controlar as mudanças de esquema em bancos de dados através de revisões versionadas. Cada revisão representa uma alteração no esquema do banco de dados.
-
-- **Autogeração de migrações:** Alembic pode gerar automaticamente scripts de migração com base nas diferenças entre modelos SQLAlchemy e o estado atual do banco de dados.
-
-- **Migrações personalizadas:** Os desenvolvedores podem criar migrações personalizadas usando Python, proporcionando flexibilidade para lidar com casos complexos de migração.
-
-- **Suporte a múltiplos bancos de dados:** Alembic é compatível com uma variedade de sistemas de gerenciamento de banco de dados (SGBDs) suportados pelo SQLAlchemy, como PostgreSQL, MySQL, SQLite, entre outros.
-
-##### Uso básico:
-
-1. **Configuração inicial:** Inicialize o ambiente do Alembic e configure o arquivo `alembic.ini` com as informações de conexão do banco de dados.
-
-2. **Criação de revisões:** Use o comando `alembic revision -m "mensagem"` para criar uma nova revisão. Isso criará um novo arquivo Python na pasta de revisões.
-
-3. **Atualização do banco de dados:** Aplique as revisões pendentes ao banco de dados utilizando o comando `alembic upgrade head`.
-
-4. **Desfazer alterações:** Se necessário, é possível reverter as alterações aplicadas usando o comando `alembic downgrade -1`, onde `-1` representa o número de revisões a serem revertidas.
-
-#### Arquivos de migracao utilizados
+#### Migration File used
 
 
 ```python
@@ -251,10 +251,11 @@ Alembic é uma ferramenta de migração de banco de dados para o SQLAlchemy, um 
 !docker compose up -d
 ```
 
-    [+] Running 3/0
-     ✔ Container cloudwalk-db-1      Running                                   0.0s 
-     ✔ Container cloudwalk-app-1     Running                                   0.0s 
-     ✔ Container pgadmin4_container  Running                                   0.0s 
+    [1A[1B[0G[?25l[+] Running 3/0
+     [32m✔[0m Container cloudwalk-db-1      [32mRunning[0m                                   [34m0.0s [0m
+     [32m✔[0m Container cloudwalk-app-1     [32mRunning[0m                                   [34m0.0s [0m
+     [32m✔[0m Container pgadmin4_container  [32mRunning[0m                                   [34m0.0s [0m
+    [?25h
 
 #### db
 
@@ -424,6 +425,19 @@ df.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -542,6 +556,19 @@ df.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -614,6 +641,19 @@ df.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -731,6 +771,19 @@ df.head(10)
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -851,6 +904,19 @@ df.head(10)
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -960,6 +1026,19 @@ df.head(50)
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1310,6 +1389,19 @@ df.head(50)
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1426,6 +1518,19 @@ df.head(50)
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2057,6 +2162,19 @@ df.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">

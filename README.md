@@ -2017,6 +2017,36 @@ Get started with FastAPI today and build high-performance web APIs with ease!
 ## Question 2
 ```Propose processes that should run daily, weekly, or monthly to maintain a healthy operation.```
 
+### Daily Processes:
+1. **Data Backup**: 
+   - Perform daily backups of the database to ensure data integrity and disaster recovery readiness.
+
+2. **Data Integrity Checks**: 
+   - Run daily data integrity checks to identify any inconsistencies or errors in the database.
+   
+3. **Transaction Monitoring**: 
+   - Send automated notifications to customers with upcoming payment deadlines or account updates to improve communication and customer experience.
+
+
+### Weekly Processes:
+1. **Financial Reporting**: 
+   - Generate weekly financial reports to track key metrics, analyze trends, and support decision-making processes.
+
+2. **Performance Monitoring**: 
+   - Monitor system performance and resource utilization on a weekly basis to identify any bottlenecks or areas for improvement.
+
+
+### Monthly Processes:
+1. **Data Archiving**: 
+   - Archive inactive or historical data monthly to optimize database performance and storage utilization.
+
+2. **Audit Preparation**: 
+    - Prepare for audits by conducting monthly audits of financial transactions, data access logs, and security controls.
+
+3. **Customer Feedback Analysis**: 
+    - Analyze monthly customer feedback and satisfaction surveys to identify areas for improvement and enhance customer service.
+
+
 ## Question 3
 ```Develop an automated email service to remind users with ongoing loans about payments. Select the frequency and content as you see fit.```
 

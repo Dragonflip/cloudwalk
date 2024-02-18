@@ -251,10 +251,10 @@ Alembic is a lightweight database migration tool for SQLAlchemy, a Python SQL to
 !docker compose up -d
 ```
 
-[+] Running 3/0
- ✔ Container cloudwalk-db-1      Running                                   0.0s 
- ✔ Container cloudwalk-app-1     Running                                   0.0s 
- ✔ Container pgadmin4_container  Running                                   0.0s
+    [+] Running 3/0
+     ✔ Container cloudwalk-db-1      Running                                   0.0s 
+     ✔ Container cloudwalk-app-1     Running                                   0.0s 
+     ✔ Container pgadmin4_container  Running                                   0.0s
 
 #### db
 
